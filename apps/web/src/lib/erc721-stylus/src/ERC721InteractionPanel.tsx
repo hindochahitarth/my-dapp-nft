@@ -662,7 +662,10 @@ export function ERC721InteractionPanel({
         <label className="text-xs text-forge-muted flex items-center gap-1.5">
           <Globe className="w-3 h-3" /> Network
         </label>
-        <Select value={selectedNetwork} onValueChange={(value) => setSelectedNetwork(value as typeof selectedNetwork)}>
+        <Select
+          value={selectedNetwork}
+          onValueChange={(value: string) => setSelectedNetwork(value as typeof selectedNetwork)}
+        >
           <SelectTrigger className="w-full">
             <SelectValue>
               <div className="flex items-center gap-2">

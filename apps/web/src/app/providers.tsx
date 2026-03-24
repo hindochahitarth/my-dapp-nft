@@ -10,6 +10,12 @@ import '@rainbow-me/rainbowkit/styles.css';
 
     export function Providers({ children }: { children: React.ReactNode }) {
       const [queryClient] = useState(() => new QueryClient());
+      const walletConnectProjectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
+
+      // Allow the app to run/build without WalletConnect env configured (Marketplace POC doesn't need it).
+      if (!walletConnectProjectId) {
+        return children;
+      }
 
       return (
         
